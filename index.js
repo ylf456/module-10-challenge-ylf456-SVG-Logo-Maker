@@ -1,8 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const color = require("./lib/color");
-const text = require("./lib/text");
-const shape = require("./lib/shape");
+const SVGfunc = require("./lib/SVGfunc.js")
 
 // if text entry = null || undefined, give a default choice of shape or color
 prompting = () => {
@@ -30,27 +28,19 @@ prompting = () => {
                 message: 'Please enter the color you want for the background. You can enter a color name or the corresponding color code. example: "blue" , "33508F"',
             },
         ])
-        .then((answers) => { 
+        .then((answers) => {
             console.log(answers);
             writeToFile("Generated_logo.svg", answers)
         })
+}
 
-    // TODO: Create a function to write README file
-    function writeToFile(fileName, data) {
-        console.log(fileName);
-        console.log(data);
-        // call functions in 3 lib 
-        // shape shapeColor text color
-        const SVGfile = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-                                 
-        <${} cx="150" cy="100" r="80" fill="${}" />
-      
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${}">SVG</text>
-      
-      </svg>`;
-        fs.writeFile(fileName, README, (err) =>
-            err ? console.log(err) : console.log('Successfully created README.md!'));
-    }
+function writeToFile(fileName, data) {
+    console.log(fileName);
+    console.log(data);
+    const SVGlogo = SVGfunc(data.text, data.textColor, data.shape, data.shapeColor);
+
+    fs.writeFile(fileName, SVGlogo, (err) =>
+        err ? console.log(err) : console.log('Successfully created a SVGlogo!'));
 }
 
 function init() { prompting() };
