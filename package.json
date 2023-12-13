@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+  },
+  "name": "svg_logo_maker",
+  "description": "This Scalable Vector Graphics (SVG) generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^24.9.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
