@@ -35,9 +35,8 @@ prompting = () => {
 }
 
 function writeToFile(fileName, data) {
-    console.log(fileName);
-    console.log(data);
-    const SVGlogo = SVGfunc(data.text, data.textColor, data.shape, data.shapeColor);
+    console.log("filename: " + fileName);
+    const SVGlogo = SVGfunc(data.shape, data.shapeColor, data.text, data.textColor);
 
     fs.writeFile(fileName, SVGlogo, (err) =>
         err ? console.log(err) : console.log('Successfully created a SVGlogo!'));
