@@ -27,10 +27,17 @@ prompting = () => {
                 name: 'shapeColor',
                 message: 'Please enter the color you want for the background. You can enter a color name or the corresponding color code. example: "blue" , "33508F"',
             },
+            {
+                type: 'input',
+                name: 'userFileName',
+                message: 'Please input a name for your file. Your filename will be `[your input].svg`. \nOtherwise, the default file name will be `Generated_logo.svg` if you skip this step by pressing enter',
+            },
         ])
         .then((answers) => {
             console.log(answers);
-            writeToFile("Generated_logo.svg", answers)
+            let fileName = `${answers.userFileName}.svg`;
+            if (fileName === '.svg') {fileName = "Generated_logo.svg"};
+            writeToFile(fileName, answers);
         })
 }
 
