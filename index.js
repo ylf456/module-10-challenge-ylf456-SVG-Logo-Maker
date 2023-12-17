@@ -19,7 +19,7 @@ prompting = () => {
             {
                 type: 'list',
                 name: 'shape',
-                message: 'Please choose a shape you want from the following list',
+                message: 'Please choose a shape you want from the list. Below are some predined shapes',
                 choices: ["circle", "triangle", "square"],
             },
             {
