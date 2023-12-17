@@ -10,7 +10,14 @@ prompting = () => {
                 type: 'input',
                 name: 'text',
                 message: 'Please enter the text on you want on the logo. Please enter at most three characters. example: "SVG"',
-                //add conditions to restart this prompt question if they entered four characters or more
+                validate: async (input) => {
+                    if(input.length > 3 ) {
+                        return "You input should be equal or less than three characters!"
+                    } else {
+                        return true;
+                    }
+                }
+                //validate methods
             },
             {
                 type: 'input',

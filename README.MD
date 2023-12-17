@@ -14,11 +14,11 @@ To use this application, change the directory path to the root folder and instal
 
 Please refer to the demo video in the video for more details.
 
-Also refer to https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes if you want additional customize.
+Also refer to https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes if you want additional customize for shape and texts.
 
 ## Credits
 
-The predefined shape parameters were pulled from 
+n/a
 
 ## License
 
