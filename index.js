@@ -10,6 +10,7 @@ prompting = () => {
                 type: 'input',
                 name: 'text',
                 message: 'Please enter the text on you want on the logo. Please enter at most three characters. example: "SVG"',
+                //add conditions to restart this prompt question if they entered four characters or more
             },
             {
                 type: 'input',
@@ -36,7 +37,7 @@ prompting = () => {
         .then((answers) => {
             console.log(answers);
             let fileName = `${answers.userFileName}.svg`;
-            if (fileName === '.svg') {fileName = "Generated_logo.svg"};
+            if (fileName === '.svg') { fileName = "Generated_logo.svg" };
             writeToFile(fileName, answers);
         })
 }
